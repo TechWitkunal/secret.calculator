@@ -1,0 +1,226 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f2f5;
+}
+
+.container {
+    position: relative;
+    max-width: 350px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 15px 25px 25px;
+    background: #fff;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container.hide {
+    opacity: 0.3;
+    pointer-events: none;
+    position: absolute;
+}
+
+.container.active {
+    max-width: 60%;
+    height: 35rem;
+}
+
+.container.active .buttons {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+.container.active .display {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+.container.active .show {
+    position: relative;
+    opacity: 1;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.container.active .show::-webkit-scrollbar {
+    width: 0.9rem;
+    border-radius: 0.5rem;
+    background-color: black;
+}
+
+.container.active .show::-webkit-scrollbar-thumb {
+    background-color: #2f9fff;
+    border-radius: 0.5rem;
+    width: 0.3rem;
+}
+
+.show .card {
+    background-color: #000e1a;
+    padding: 1rem 0.5rem;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.show .card .title {
+    font-size: 1rem;
+}
+
+.show .card .limit {
+    font-size: 0.7rem;
+}
+
+.show {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 12rem;
+    /* background-color: red; */
+    /* border: 1px solid grey; */
+    color: white;
+    border-radius: 1rem;
+    /* cursor: pointer; */
+    padding: 1rem 1rem;
+    margin: 1rem 1rem;
+}
+
+.show .title {
+    width: 100%;
+    border-bottom: 2px solid #2f9fff;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.show .data {
+    display: none;
+}
+
+
+.display {
+    height: 100px;
+    width: 100%;
+    outline: none;
+    border: none;
+    text-align: right;
+    margin-bottom: 15px;
+    font-size: 30px;
+    font-weight: 500;
+    color: #000e1a;
+    pointer-events: none;
+    border: 1px solid rgb(220, 220, 220);
+    padding-right: 0.5rem;
+    opacity: 1;
+    position: relative;
+    pointer-events: auto;
+}
+
+.buttons {
+    display: grid;
+    grid-gap: 12px;
+    grid-template-columns: repeat(4, 1fr);
+    opacity: 1;
+    pointer-events: auto;
+    position: relative;
+}
+
+.buttons button {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    background-color: #fafafa;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease-in-out;
+}
+
+.buttons button:hover {
+    background-color: #eee;
+}
+
+.buttons button:active {
+    transform: scale(0.99);
+}
+
+.operator {
+    color: #2f9fff;
+    font-weight: 600;
+}
+
+.wapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40rem;
+    background-color: white;
+    height: 35rem;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.wapper.active {
+    opacity: 1;
+    pointer-events: auto;
+    /* position: relative; */
+}
+
+.wapper .close {
+    position: absolute;
+    top: 1.1rem;
+    right: 1rem;
+    background-color: #2f9fff;
+    color: white;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    border: none;
+}
+
+.wapper .edit {
+    position: absolute;
+    top: 1.1rem;
+    right: 4rem;
+    background-color: #2f9fff;
+    color: white;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    border: none;
+}
+
+.wapper .title {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid black;
+    font-size: 1.5rem;
+}
+
+.wapper .limit {
+    display: none;
+}
+
+.wapper .data {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+}
